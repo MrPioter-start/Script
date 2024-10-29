@@ -18,7 +18,7 @@ function MyDate(date, month, year) {
   };
 }
 
-let date = new MyDate(12, 2, 2004);
+let date = new MyDate(31, 2, 2004);
 console.log(date.leapYear());
 date.fiveDay();
 console.log(`${date.date}-${date.month}-${date.year}`);
