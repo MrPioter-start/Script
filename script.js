@@ -83,7 +83,7 @@ data.split("").reduce((count, val) => {
 console.log(res);
 */
 
-let n = 12n,
+/*let n = 12n,
   b = 2n;
 
 let reversed = n.toLocaleString(b).split("").reverse().join("");
@@ -91,3 +91,73 @@ reversed = reversed.toString();
 console.log(parseInt(reversed, b));
 
 while (n > 0n) {}
+
+throw new Error("пп");
+*/
+let MyError = (message) => console.log(`My error = ${message}`);
+let array = ["asad", "asdsaf", "as", "a"];
+array.filter((a) => a === " ");
+console.log(array.map((a) => a.length));
+
+let resault = (function () {
+  console.log("laalall");
+})(); // IIFES Function
+//Object arguments
+console.log(typeof arguments);
+function ArgFunc(a, b) {
+  let arg = arguments;
+  console.log(arg[0]);
+  return (arguments[0] += arguments[1]);
+}
+console.log(ArgFunc(1, 2));
+let regex = /\./g;
+var replaceDots = function (str) {
+  return str.replace(regex, "-");
+};
+
+let str = replaceDots("one.two.three");
+console.log(str);
+
+function entrX(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+
+let a = entrX(1);
+console.log(a(2));
+
+class Dog {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  tellUsAboutYourself() {
+    return `My name is ${this.name}\nI'm ${this.age}`;
+  }
+  woof() {
+    return "Woof";
+  }
+}
+
+let dog = new Dog("Vasya", 3);
+console.log(dog.tellUsAboutYourself());
+
+class Cat {
+  constructor(name, age, breed) {
+    this.name = name;
+    this.age = age;
+    this.breed = breed;
+  }
+
+  meow() {
+    return "MEOW!!!";
+  }
+}
+
+let sparkles = new Cat("Sparkles", 5, "Siamese");
+
+console.log(dog.tellUsAboutYourself.call(sparkles));
+console.log(dog.tellUsAboutYourself.apply(sparkles));
+const tellAboutCat = dog.tellUsAboutYourself.bind(sparkles);
+console.log(tellAboutCat());
